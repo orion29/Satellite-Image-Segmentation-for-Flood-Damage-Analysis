@@ -1,31 +1,35 @@
 # Satellite-Image-Segmentation-for-Flood-Damage-Analysis
 ## Data Source
 
-Free public images: Sentinel dataset of Very High Resolution Images (1973*2263 pixels) with a resolution of .216m per pixel was used. Masks (96*96 pixels) with resolution of 10m per pixel were used for both building and damage detection.
+Free public images: Sentinel dataset of Very High Resolution Images (1973 by 2263 pixels) with a resolution of .5m per pixel was used. Masks (960 by 960 pixels) with resolution of 1m per pixel were used for both building and damage detection.
 
- VHR Images		   	    Building Mask(10m)	    Damage Mask(10m) 
-
+### Very High Resolution Image (0.5m per pixel)
+### Building Mask(1m)	   
+### Damage Mask(1m) 
 
 
 ## Pre-processing steps
+<li> VHR Images were downscaled to (1024,1024) resolution using BICUBIC resampling technique.</li>
+<li> Image Masks were upsampled to (1024,1024) resolution using BICUBIC resampling technique.</li>
+<li> Images and their respective Masks were cut into 4 patches of resolution (512,512) each.</li>
+<li> Both VHR Images and Masks were converted from int tensor (0-255) to float tensor (0-1) and normalized using imagenet stats .</li><br>
 
-VHR Images were downscaled to (512,512) resolution using BICUBIC resampling technique.
-Image Masks were upsampled to (512,512) resolution using BICUBIC resampling technique.
-Both VHR Images and Masks were converted from int tensor (0-255) to float tensor (0-1) .
-BICUBIC Resampling : Bicubic resampling computes new pixels using cubic splines. When upsampling, this method operates on the 4 by 4 cell of pixels surrounding each new pixel location. This is the recommended resampling method for most images as it represents a good trade-off between accuracy and speed.
+<b> BICUBIC Resampling </b> : Bicubic resampling computes new pixels using cubic splines. When upsampling, this method operates on the 4 by 4 cell of pixels surrounding each new pixel location. This is the recommended resampling method for most images as it represents a good trade-off between accuracy and speed.
+
+## Image Patches
+
+
 
 ## Training
 
-### Model:
-
-UNET with Resnet-34 (pertained on cifar-10 imagenet model) as a backbone.
-The U-Net is convolutional network architecture for fast and precise segmentation of images. It is an encoder-decoder style network.
+### Model: UNET with Resnet-34 (pertained on cifar-10 imagenet model) as a backbone.
+The <b> U-Net </b> is convolutional network architecture for fast and precise segmentation of images. It is an encoder-decoder style network.<br>
 Using a U-Net with a pretrained resnet encoder means that the encoder part of the U-Net will be replaced by the resnet pretrained weights. It's a concept of transfer learning, i.e we don't need to train the model from scratch.
 
 
 ### Optimizer: ADAM
 
-Adaptive Moment Estimation (Adam)  is  an optimizer that computes adaptive learning rates for each parameter. In addition to storing an exponentially decaying average of past squared gradients vt like RMSprop, Adam also keeps an exponentially decaying average of past gradients mt, similar to momentum.
+<b> Adaptive Moment Estimation (Adam) </b> is  an optimizer that computes adaptive learning rates for each parameter. In addition to storing an exponentially decaying average of past squared gradients vt like RMSprop, Adam also keeps an exponentially decaying average of past gradients mt, similar to momentum.
 gt =  Gradient Calculated
 mt =  Momentum
 vt =  RMSprop
@@ -45,17 +49,11 @@ We further decrease our learning rate from lr_max/div_factor to lr_max/(div_fact
 
 #### Building Segmentation Training  
 
-
-Dice score : 86%
+Validation Set Dice score : 86%
 
 #### Damaged Area Segmentation Training 
 
-
-Dice score : 82%
-
-
-
-
+Validaton Set Dice score : 87%
 
 
 ## Predictions
