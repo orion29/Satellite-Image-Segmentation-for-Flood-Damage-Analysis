@@ -32,8 +32,8 @@ Using a U-Net with a pretrained resnet encoder means that the encoder part of th
 <b> Adaptive Moment Estimation (Adam) </b> is  an optimizer that computes adaptive learning rates for each parameter. In addition to storing an exponentially decaying average of past squared gradients vt like RMSprop, Adam also keeps an exponentially decaying average of past gradients mt, similar to momentum.
 <li> gt =  Gradient Calculated </li>
 <li> mt =  Momentum </li>
-<li> vt =  RMSprop </li>
-<img src="https://github.com/orion29/Satellite-Image-Segmentation-for-Flood-Damage-Analysis/blob/main/Images/moment.png" width="300" height="70>
+<li> vt =  RMSprop </li><br>
+<img src="https://github.com/orion29/Satellite-Image-Segmentation-for-Flood-Damage-Analysis/blob/main/Images/moment.png" width="300">
 
 ### Scheduler: One Cycle Policy
 
@@ -43,8 +43,8 @@ We progressively increase our learning rate from base_lr to lr_max and at the sa
 We do the exact opposite: we progressively decrease our learning rate from lr_max to lr_max/div_factor and at the same time we progressively increase our momentum from mom_min to mom_max.
 
 We further decrease our learning rate from lr_max/div_factor to lr_max/(div_factor x 100) and we keep momentum steady at mom_max.
-              
-			Learning rate			Momentum
+               
+			           Learning rate			                      Momentum
 			
 <img src="https://github.com/orion29/Satellite-Image-Segmentation-for-Flood-Damage-Analysis/blob/main/Images/onefit.png"/>
 
