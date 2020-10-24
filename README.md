@@ -3,9 +3,8 @@
 
 Free public images: Sentinel dataset of Very High Resolution Images (1973 by 2263 pixels) with a resolution of .5m per pixel was used. Masks (960 by 960 pixels) with resolution of 1m per pixel were used for both building and damage detection.
 
-### Very High Resolution Image (0.5m per pixel)
-### Building Mask(1m)	   
-### Damage Mask(1m) 
+### Data
+![Optional Text](../master/Images/Image_vhr.png)
 
 
 ## Pre-processing steps
