@@ -59,13 +59,11 @@ Validaton Set Dice score : 87%
 ## Predictions
 ### VHR Image:
 
-### Buildings:
+<img src="https://github.com/orion29/Satellite-Image-Segmentation-for-Flood-Damage-Analysis/blob/main/Images/pred_img.png"/>
 
-Target 							Prediction
-     
-### Damage:
+### Predictions
 
-Target 							Prediction
+<img src="https://github.com/orion29/Satellite-Image-Segmentation-for-Flood-Damage-Analysis/blob/main/Images/pred.png"/>
           
 ## Conclusion
 
