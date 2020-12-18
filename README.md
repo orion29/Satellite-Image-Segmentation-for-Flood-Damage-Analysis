@@ -2,6 +2,7 @@
 ## Data Source
 
 Free public images: Sentinel dataset of Very High Resolution Images (1973 by 2263 pixels) with a resolution of .5m per pixel was used. Masks (960 by 960 pixels) with resolution of 1m per pixel were used for both building and damage detection.
+Data : https://s3.eu-central-1.amazonaws.com/corupublic/AAAI_harvey_data/harvey.zip
 
 ### Data
 <img src="https://github.com/orion29/Satellite-Image-Segmentation-for-Flood-Damage-Analysis/blob/main/Images/Image_vhr.png"/>
