@@ -50,11 +50,11 @@ We further decrease our learning rate from lr_max/div_factor to lr_max/(div_fact
 
 #### Building Segmentation Training  
 
-Validation Set Dice score : 86%
+Validation Set Dice score(IOU) : 0.86
 
 #### Damaged Area Segmentation Training 
 
-Validaton Set Dice score : 87%
+Validaton Set Dice score(IOU : 0.87
 
 
 ## Predictions
