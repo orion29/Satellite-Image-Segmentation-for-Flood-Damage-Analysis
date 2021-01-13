@@ -54,7 +54,7 @@ Validation Set Dice score(IOU) : 0.86
 
 #### Damaged Area Segmentation Training 
 
-Validaton Set Dice score(IOU : 0.87
+Validaton Set Dice score(IOU) : 0.87
 
 
 ## Predictions
